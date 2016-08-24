@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style>
+body {
+text-align:center;
+background-color: #99FFFF;
+}
+
+#heart {
+    position: relative;
+    width: 500px;
+    height: 450px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#heart:before,
+#heart:after {
+    position: absolute;
+	font-size: 60px;
+	color: #6633CC;
+    left: 250px;
+    top: 0;
+    width: 250px;
+    height: 400px;
+    background: #FF0099;
+    -moz-border-radius: 250px 250px 0 0;
+    border-radius: 250px 250px 0 0;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+       -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+         -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+}
+
+#heart:before {
+  content: "Valentine's Day!";
+}
+
+#heart:after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+       -moz-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+         -o-transform-origin: 100% 100%;
+            transform-origin :100% 100%;
+    content: "I Love You, Lily!";
+}
+</style>
+</head>
+
+ 
+ 
+<body>
+<div id="heart"></div>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(window).resize(function(){ 
+    $("#heart").css({ 
+        position: "absolute", 
+        left: ($(window).width() - $("#heart").outerWidth())/2, 
+        top: ($(window).height() - $("#heart").outerHeight())/2 
+    });
+}); 
+$(function(){ 
+    $(window).resize(); 
+}); 
+</script>
+</body>
+</html>
